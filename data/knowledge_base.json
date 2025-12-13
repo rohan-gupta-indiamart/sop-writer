@@ -149,5 +149,286 @@
     ],
     "sentiment_transition": "Customer confused and frustrated about payment purpose to calmer and agreeable after explanation and callback arrangement.",
     "id": 6
+  },
+  {
+    "concerns": [
+      {
+        "concern_summary": "Catalog integrity issue due to unauthorized edits and product deactivation",
+        "resolution_sop": "1. Verify the seller\u2019s identity and confirm they are logged in. 2. Ask if they are on the mobile app. 3. In the app, tap Add Product. 4. Tap the three dots on the top right. 5. Tap Deactivate products to view inactive items. 6. Open each inactive product and tap Activate. 7. Open a few active products and compare photos, titles, and details with the seller\u2019s original uploads or screenshots. 8. If titles or material show brass instead of metal, note the exact items and changes needed. 9. Inform support on the call to correct names and material from brass to metal. 10. Request restoration of removed photos and descriptions for each affected model. 11. Ask the agent to raise a concern and record that no catalog changes should occur without the seller\u2019s permission. 12. Request confirmation once updates and restorations are completed. 13. For added value, once the catalog is back to normal, suggest considering a longer-duration plan for stable visibility and continuity.",
+        "key_topics": [
+          "IndiaMART App",
+          "Add Product",
+          "Deactivate products",
+          "Activate product",
+          "Catalog Update",
+          "Product Photos",
+          "Product Title Change",
+          "Material Attribute",
+          "Designing Team",
+          "Account Manager",
+          "Escalation",
+          "Brass Srinath card dashboard idol",
+          "Vishnu Tilak",
+          "Balaji Tilak"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Assured"
+      }
+    ],
+    "id": 7
+  },
+  {
+    "sops": [
+      {
+        "concern_summary": "Deactivated Products: Reactivation Process",
+        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login access. 2. Open the IndiaMART Seller app. 3. Tap Add Product on the home screen. 4. Tap the three dots on the top right. 5. Select Deactivated Products. 6. Select the items you want to restore. 7. Tap Activate. 8. Check Active to confirm the listings are visible. 9. For higher visibility and lead flow, consider upgrading your plan.",
+        "key_topics": [
+          "IndiaMART Seller app",
+          "Add Product",
+          "Three dots menu",
+          "Deactivated Products",
+          "Activate",
+          "Inactive listings",
+          "Catalog visibility"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Assured"
+      },
+      {
+        "concern_summary": "Catalog Corrections: Wrong Material and Title",
+        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login access. 2. Open the IndiaMART Seller app. 3. Open the affected product listing. 4. Tap Edit. 5. Correct the Product Name. 6. Update the Material field from brass to metal as applicable. 7. Review size, color, dimensions, and packaging fields. 8. Save changes. 9. Repeat for all impacted listings. 10. For better lead quality and trust, consider a long-term plan.",
+        "key_topics": [
+          "Material attribute",
+          "Brass vs Metal",
+          "Product Title",
+          "Edit Product",
+          "Size",
+          "Color",
+          "Dimensions",
+          "Packaging",
+          "Dashboard idol",
+          "Vishnu Tilak",
+          "Balaji Tilak"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Assured"
+      },
+      {
+        "concern_summary": "Product Images: Restore Missing Photos",
+        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login access. 2. Open the IndiaMART Seller app. 3. Open the product with missing photos. 4. Tap Edit, then Photos. 5. Upload group photos, individual photos, and multi-angle shots as provided earlier. 6. Save changes. 7. Repeat for each model that needs more photos. 8. For better conversions, maintain clear, high\u2011resolution images and consider upgrading your plan for more visibility.",
+        "key_topics": [
+          "Product photos",
+          "Group photo",
+          "Individual photo",
+          "Multi-angle images",
+          "Edit > Photos",
+          "Catalog media",
+          "Image count"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Assured"
+      },
+      {
+        "concern_summary": "Unauthorized Catalog Changes: Escalation and Prevention",
+        "resolution_sop": "1. Verify the seller\u2019s identity and confirm account details. 2. Confirm which products were modified and note the modified date shown in the panel. 3. Raise a concern to the catalog/design team about unauthorized changes. 4. Request rollback or correction for titles, material, photos, and activation status. 5. Add an account note: no catalog changes without seller approval. 6. Share the ticket ID and expected resolution timeline with the seller. 7. After resolution, offer a brief catalog health review and suggest an annual plan for stable support and better lead visibility.",
+        "key_topics": [
+          "Unauthorized changes",
+          "Designing team",
+          "Modified date (28 November)",
+          "Rollback request",
+          "Account note: No changes without approval",
+          "Ticket escalation",
+          "Catalog integrity"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Assured"
+      }
+    ],
+    "id": 8
+  },
+  {
+    "results": [
+      {
+        "concern_summary": "Catalog Recovery: Reactivate Deactivated Listings",
+        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login to the IndiaMART Seller app. 2. Open the app and go to Add Product at the bottom-right. 3. Tap the three dots on the top-right. 4. Select Deactivate Product to view all deactivated items. 5. Tap each required product and choose Activate. 6. Open one reactivated product and review details to confirm nothing is deleted; deactivation only hides the listing. 7. If any item fails to activate, note the product names and raise a concern to support. 8. Confirm with the seller that the catalog is visible again. 9. For more visibility after reactivation, consider upgrading the plan once the catalog is restored.",
+        "key_topics": [
+          "IndiaMART Seller app",
+          "Add Product",
+          "Three dots menu",
+          "Deactivate Product",
+          "Activate",
+          "Catalog hidden vs deleted",
+          "Deactivated products"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Assured"
+      },
+      {
+        "concern_summary": "Catalog Correction: Wrong Material and Titles After Assisted Editing",
+        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login access. 2. Open the Seller app and locate the affected product from the catalog. 3. Open the product and use the Edit option. 4. Correct the Product Title as per the seller\u2019s original naming. 5. Update the Material field from brass to metal as instructed by the seller. 6. Review key attributes: size, dimensions, color, packaging, and mounting. 7. Save the changes and recheck the live view. 8. For multiple items, document examples and raise a concern to support to apply bulk corrections. 9. After corrections, suggest a plan upgrade to improve lead quality and visibility.",
+        "key_topics": [
+          "Product Title",
+          "Material field",
+          "Brass vs Metal",
+          "Attributes: size, dimensions, color, packaging",
+          "Dashboard idol",
+          "Vishnu Tilak",
+          "Balaji Tilak",
+          "Modify ID"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Assured"
+      },
+      {
+        "concern_summary": "Media Restoration: Missing Product Photos After Catalog Update",
+        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login. 2. Open the affected product in the Seller app. 3. Use the Edit or Photos option to manage images. 4. Add all required images: group photo, individual photo, and angle shots. 5. Set the best image as the primary image. 6. Save and preview the product to confirm image count is restored. 7. If images were removed during recent changes, raise a concern to support with dates and product links for restoration review. 8. Confirm with the seller that visual completeness is restored. 9. Recommend upgrading the plan to boost image-rich listings in search.",
+        "key_topics": [
+          "Product photos",
+          "Group photo",
+          "Individual photo",
+          "Angle shots",
+          "Primary image",
+          "Designing team",
+          "Image removal"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Assured"
+      },
+      {
+        "concern_summary": "Service Control: Prevent Unauthorized Edits by Internal Teams",
+        "resolution_sop": "1. Verify the seller\u2019s identity and confirm current account details. 2. Acknowledge the unauthorized changes and capture examples and dates. 3. Create a support ticket with subject: Unauthorized Catalog Changes. 4. Add product examples, screenshots, and modification dates. 5. Request rollback of changes and restoration of original titles, material, and photos. 6. Add an account note: Do not edit catalog without seller approval. 7. Notify the Account Manager and the design team through the ticket. 8. Share the ticket ID with the seller and set a clear follow-up time. 9. After resolution, suggest a plan upgrade to maximize lead quality once catalog stability is ensured.",
+        "key_topics": [
+          "Designing team",
+          "Account Manager",
+          "Escalation",
+          "Unauthorized changes",
+          "Audit trail",
+          "Modified on 28 November",
+          "Rollback request"
+        ],
+        "sentiment_transition": "Angry \u2192 Calm"
+      }
+    ],
+    "id": 9
+  },
+  {
+    "result": [
+      {
+        "concern_summary": "Unauthorized Product Deactivation",
+        "resolution_sop": "1. Verify the seller's identity and confirm login to the IndiaMART Seller app. 2. On the home screen, tap Add Product at the bottom-right. 3. Tap the three dots on the Add Product screen. 4. Select Deactivated Products. 5. Select the required items and tap Activate. 6. Refresh and confirm the products appear under Active. 7. For better visibility and stability, consider upgrading to a longer-duration plan.",
+        "key_topics": [
+          "IndiaMART Seller App",
+          "Add Product",
+          "Three dots menu",
+          "Deactivated Products",
+          "Activate",
+          "Catalog Restoration",
+          "Seller Tools",
+          "Modified on 28 November"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Reassured"
+      },
+      {
+        "concern_summary": "Product Attributes Incorrectly Edited",
+        "resolution_sop": "1. Verify the seller's identity and confirm login to the Seller Panel or app. 2. Go to the product list (Active or Deactivated). 3. Open a product that shows incorrect details. 4. Tap Edit. 5. Update Material from Brass to Metal and correct the product title. 6. Review attributes like size, color, dimensions, and packaging. 7. Save changes and repeat for other affected products. 8. For faster edits and better lead visibility, consider upgrading your plan.",
+        "key_topics": [
+          "Material",
+          "Brass",
+          "Metal",
+          "Product Title",
+          "Attributes: size, color, dimensions, packaging",
+          "Dashboard idol",
+          "Vishnu Tilak",
+          "Balaji Tilak",
+          "Adhesive base",
+          "Mounting"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Reassured"
+      },
+      {
+        "concern_summary": "Missing or Reduced Product Images",
+        "resolution_sop": "1. Verify the seller's identity and confirm login to the Seller app. 2. Open the target product from the list. 3. Tap Edit and open the Photos or Images section. 4. Upload all required photos, including group, individual, and multiple angles. 5. Set the best image as the primary photo. 6. Save and preview the gallery to confirm. 7. For better conversions and exposure, consider a plan upgrade.",
+        "key_topics": [
+          "Photos",
+          "Group photo",
+          "Individual photo",
+          "Multiple angles",
+          "Image gallery",
+          "Per model 7+ photos",
+          "Active product shows two photos"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Reassured"
+      },
+      {
+        "concern_summary": "Escalation for Unauthorized Catalog Changes",
+        "resolution_sop": "1. Verify the seller's identity and confirm account details. 2. Summarize the issue: products were deactivated, names changed to brass, and photos reduced, without consent. 3. Open the Support or Help section in the Seller Panel. 4. Raise a ticket under Catalog or Design Changes. 5. Add a description and attach screenshots showing original metal titles and photo counts. 6. Request restoration and ask that no changes be made without explicit approval. 7. Share the ticket reference with the seller and confirm follow-up. 8. For priority handling and dedicated assistance, consider upgrading to a longer-duration plan.",
+        "key_topics": [
+          "Catalog design team",
+          "Unauthorized changes",
+          "Escalation",
+          "Support ticket",
+          "Satisfaction mail",
+          "Catalog update",
+          "Screenshots evidence",
+          "Product names changed to Brass",
+          "Metal vs Brass"
+        ],
+        "sentiment_transition": "Frustrated \u2192 Reassured"
+      }
+    ],
+    "id": 10
+  },
+  {
+    "concern_summary": "Catalog Integrity: Unauthorized Edits by Internal Team",
+    "resolution_sop": "1. Verify your login on the IndiaMART app or Seller Panel. 2. Open Products and review recently modified items. 3. Note unwanted changes like name edits, material changes, or photo removal. 4. Take screenshots of the current view and note the modification date. 5. Go to Support or Help and raise a concern titled 'Unauthorized catalog changes'. 6. Add details: what changed, when it changed, and request restoration to the previous version. 7. Ask to record a note: 'No changes without my explicit approval' and request the design team not to modify or contact without permission. 8. Ask your Account Manager to confirm the action plan and timeline. 9. For better monitoring and lead visibility, consider upgrading to a longer-duration plan.",
+    "key_topics": [
+      "Designing Team",
+      "Unauthorized changes",
+      "Catalog Integrity",
+      "Account Manager",
+      "Raise Concern",
+      "Ticket",
+      "Modified on 28 November",
+      "Dashboard idol"
+    ],
+    "sentiment_transition": "Frustrated \u2192 Reassured",
+    "id": 11
+  },
+  {
+    "concern_summary": "Product Reactivation: Deactivated Items on Mobile App",
+    "resolution_sop": "1. Verify your login in the IndiaMART mobile app. 2. On the home screen, tap Add Product at the bottom right. 3. Tap the three dots at the top. 4. Select Deactivated Products. 5. Open each product and tap Activate. 6. Review details after activation to ensure everything appears as expected. 7. For higher visibility and fewer lapses, consider an annual plan.",
+    "key_topics": [
+      "IndiaMART mobile app",
+      "Add Product",
+      "Three dots menu",
+      "Deactivated Products",
+      "Activate",
+      "Seller App"
+    ],
+    "sentiment_transition": "Frustrated \u2192 Reassured",
+    "id": 12
+  },
+  {
+    "concern_summary": "Catalog Update: Correct Product Attributes",
+    "resolution_sop": "1. Verify your login on the IndiaMART app or Seller Panel. 2. Go to Products and search for the affected items. 3. Open a product and tap Edit. 4. Correct the Product Name and Material fields, for example change brass to metal if needed. 5. Review size, dimensions, color, and packaging fields. 6. Save the changes and repeat for all impacted products. 7. For improved lead quality, keep attributes accurate and consider a longer-duration package.",
+    "key_topics": [
+      "Edit Product",
+      "Product Name",
+      "Material",
+      "Brass",
+      "Metal",
+      "Catalog Update",
+      "Dashboard idol",
+      "Vishnu Tilak",
+      "Balaji Tilak"
+    ],
+    "sentiment_transition": "Frustrated \u2192 Reassured",
+    "id": 13
+  },
+  {
+    "concern_summary": "Catalog Enhancement: Restore Multiple Product Images",
+    "resolution_sop": "1. Verify your login on the IndiaMART app or Seller Panel. 2. Go to Products and open the product that shows fewer images. 3. Tap Edit and open the Images section. 4. Upload group photos, individual color photos, and different angle shots. 5. Set the best image as primary. 6. Save the product and repeat for other models. 7. To boost engagement and visibility, maintain rich images and explore an annual plan.",
+    "key_topics": [
+      "Product Images",
+      "Multi-angle photos",
+      "Group photo",
+      "Image Gallery",
+      "Edit Product",
+      "Catalog Quality"
+    ],
+    "sentiment_transition": "Frustrated \u2192 Reassured",
+    "id": 14
   }
 ]

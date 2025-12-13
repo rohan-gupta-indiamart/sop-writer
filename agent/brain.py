@@ -26,7 +26,12 @@ class VoiceAgent:
         Uses LLM to find the most relevant SOP from the Knowledge Base.
         """
         # Create a summary of available SOPs
-        sop_summaries = [f"ID {item['id']}: {item['concern_summary']} (Keywords: {', '.join(item['key_topics'])})" for item in self.kb]
+        sop_summaries = []
+        for item in self.kb:
+             keywords = item.get('key_topics', [])
+             # key_topics might be commented out or missing
+             kw_str = f" (Keywords: {', '.join(keywords)})" if keywords else ""
+             sop_summaries.append(f"ID {item['id']}: {item['concern_summary']}{kw_str}")
         sop_list_str = "\n".join(sop_summaries)
         
         system_prompt = f"""
@@ -41,7 +46,7 @@ class VoiceAgent:
         
         try:
             response = client.chat.completions.create(
-                model="openai/gpt-5-mini",
+                model="openai/gpt-5",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": query}
@@ -86,7 +91,7 @@ class VoiceAgent:
         
         try:
             response = client.chat.completions.create(
-                model="openai/gpt-5-mini",
+                model="openai/gpt-5",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": query}

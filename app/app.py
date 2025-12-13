@@ -147,16 +147,30 @@ with tab1:
                         if 'Call recording url' in row: meta['Audio URL'] = row['Call recording url']
                             
                         # st.write(f"Processing row {index}...") # debug
-                        sop_data = generate_sop(str(transcript), metadata=meta)
-                        if sop_data:
-                            sop_data['id'] = index
-                            # Merge metadata into SOP for storage visibility
-                            sop_data.update(meta)
-                            
-                            knowledge_base.append(sop_data)
-                            
-                            # Also update persistent storage
-                            update_sop_sheet(sop_data)
+                        sop_data_list = generate_sop(str(transcript), metadata=meta, existing_sops=knowledge_base)
+                        
+                        if sop_data_list:
+                            if not isinstance(sop_data_list, list):
+                                sop_data_list = [sop_data_list]
+                                
+                            for sop_data in sop_data_list:
+                                if not sop_data: continue
+                                
+                                # Check for duplicates (if prompt follows instruction)
+                                if 'duplicate_of_id' in sop_data:
+                                    # Log duplicate but don't add to KB
+                                    sop_data['resolution_sop'] = f"Duplicate of ID {sop_data['duplicate_of_id']}"
+                                    update_sop_sheet(sop_data)
+                                    continue
+
+                                sop_data['id'] = len(knowledge_base) # Incremental ID
+                                # Merge metadata into SOP for storage visibility
+                                sop_data.update(meta)
+                                
+                                knowledge_base.append(sop_data)
+                                
+                                # Also update persistent storage
+                                update_sop_sheet(sop_data)
                     
                     # Save to JSON
                     import json
@@ -174,14 +188,12 @@ with tab1:
     else:
         st.info("Please upload a CSV file to start.")
                 
-    st.subheader("Current Knowledge Base (JSON)")
-    if os.path.exists(KB_PATH):
-        import json
-        with open(KB_PATH, 'r') as f:
-            data = json.load(f)
-        st.json(data)
+    st.subheader("SOP Registry (Knowledge Base)")
+    if os.path.exists(CSV_PATH):
+        df_sheet = pd.read_csv(CSV_PATH)
+        st.dataframe(df_sheet, use_container_width=True)
     else:
-        st.info("No Knowledge Base generated yet.")
+        st.info("Knowledge Base is empty.")
 
 with tab2:
     st.header("Real-time SOP Creator")
@@ -245,21 +257,36 @@ with tab2:
                 st.warning("Please provide transcript text first.")
             else:
                 with st.spinner("Generating SOP..."):
-                    sop = generate_sop(transcript_text, metadata=meta)
-                    if sop:
-                        st.success("SOP Generated!")
-                        st.json(sop)
+                    # Load existing KB for deduplication check
+                    existing_kb = []
+                    if os.path.exists(KB_PATH):
+                        with open(KB_PATH, 'r') as f:
+                            try: existing_kb = json.load(f)
+                            except: existing_kb = []
+
+                    sop_data_list = generate_sop(transcript_text, metadata=meta, existing_sops=existing_kb)
+                    
+                    if sop_data_list:
+                        if not isinstance(sop_data_list, list):
+                            sop_data_list = [sop_data_list]
                         
-                        # Update Storage
-                        update_sop_sheet(sop)
-                        update_knowledge_base_json(sop)
-                        st.toast("Saved to Registry & Agent Brain!")
+                        st.success("Analysis Complete!")
+                        for sop in sop_data_list:
+                            if 'duplicate_of_id' in sop:
+                                st.warning(f"Duplicate content detected! (Matches SOP ID {sop['duplicate_of_id']})")
+                                update_sop_sheet(sop)
+                            else:
+                                st.json(sop)
+                                # Update Storage
+                                update_sop_sheet(sop)
+                                update_knowledge_base_json(sop)
+                                st.toast("SOP saved to Registry & Agent Brain!")
                     else:
                         st.error("SOP Generation failed.")
         else:
             st.info("SOP output will appear here.")
                     
-    st.subheader("SOP Registry (Sheet)")
+    st.subheader("SOP Registry (Knowledge Base)")
     if os.path.exists(CSV_PATH):
         df_sheet = pd.read_csv(CSV_PATH)
         st.dataframe(df_sheet, use_container_width=True)
