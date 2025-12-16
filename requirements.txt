@@ -1,0 +1,6 @@
+streamlit
+openai
+pandas
+requests
+python-dotenv
+# command to install -> pip install -r requirements.txt
