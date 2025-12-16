@@ -5,7 +5,7 @@ import os
 
 # Configuration
 # Ideally this comes from env vars, but using the hardcoded key from writer.py for the hackathon
-API_KEY = "sk-XhmNFaPbVqeIwl3RqrAvfQ"
+API_KEY = "sk-uUANxcPXCaQOwrCHUQ-FJg"
 BASE_URL = "https://imllm.intermesh.net/v1"
 KB_PATH = "data/knowledge_base.json"
 

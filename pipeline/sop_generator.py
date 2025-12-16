@@ -7,7 +7,7 @@ import datetime
 import csv
 
 # Configuration
-API_KEY = "sk-XhmNFaPbVqeIwl3RqrAvfQ" # Using the key found in writer.py
+API_KEY = "sk-uUANxcPXCaQOwrCHUQ-FJg" # Using the key found in writer.py
 BASE_URL = "https://imllm.intermesh.net/v1"
 # Determine the project root (assuming this script is in pipeline/ or similar depth)
 # pipeline/sop_generator.py -> parent is project root

@@ -4,4 +4,4 @@ __pycache__/
 .DS_Store
 .venv/
 .venv_wsl/
-run_in_wsl.sh
+# run_in_wsl.sh

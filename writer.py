@@ -2,7 +2,7 @@ import openai
 import json
 
 def generate_sop_from_transcript(transcript_text):
-    client = openai.OpenAI(api_key="sk-XhmNFaPbVqeIwl3RqrAvfQ",base_url = "https://imllm.intermesh.net/v1")
+    client = openai.OpenAI(api_key="sk-uUANxcPXCaQOwrCHUQ-FJg",base_url = "https://imllm.intermesh.net/v1")
 
     # The Prompt Definition
     system_instruction = """
