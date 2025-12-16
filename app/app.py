@@ -4,14 +4,9 @@ import sys
 import os
 import pandas as pd
 
-<<<<<<< HEAD
 # Add parent dir to path to import agent/pipeline
-=======
-# Add parent dir to path to import agent/pipeline #
->>>>>>> refs/remotes/origin/main
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from agent.brain import VoiceAgent
 from agent.brain import VoiceAgent
 from pipeline.sop_generator import run_pipeline, generate_sop, transcribe_audio, update_sop_sheet, update_knowledge_base_json
 
@@ -151,7 +146,6 @@ with tab1:
                         if 'Call recording url' in row: meta['Audio URL'] = row['Call recording url']
                             
                         # st.write(f"Processing row {index}...") # debug
-<<<<<<< HEAD
                         sop_data_list = generate_sop(str(transcript), metadata=meta, existing_sops=knowledge_base)
                         
                         if sop_data_list:
@@ -176,18 +170,6 @@ with tab1:
                                 
                                 # Also update persistent storage
                                 update_sop_sheet(sop_data)
-=======
-                        sop_data = generate_sop(str(transcript), metadata=meta)
-                        if sop_data:
-                            sop_data['id'] = index
-                            # Merge metadata into SOP for storage visibility
-                            sop_data.update(meta)
-                            
-                            knowledge_base.append(sop_data)
-                            
-                            # Also update persistent storage
-                            update_sop_sheet(sop_data)
->>>>>>> refs/remotes/origin/main
                     
                     # Save to JSON
                     import json
@@ -205,7 +187,6 @@ with tab1:
     else:
         st.info("Please upload a CSV file to start.")
                 
-<<<<<<< HEAD
     st.subheader("SOP Registry (Knowledge Base)")
     if os.path.exists(CSV_PATH):
         try:
@@ -217,16 +198,6 @@ with tab1:
 
     else:
         st.info("Knowledge Base is empty.")
-=======
-    st.subheader("Current Knowledge Base (JSON)")
-    if os.path.exists(KB_PATH):
-        import json
-        with open(KB_PATH, 'r') as f:
-            data = json.load(f)
-        st.json(data)
-    else:
-        st.info("No Knowledge Base generated yet.")
->>>>>>> refs/remotes/origin/main
 
 with tab2:
     st.header("Real-time SOP Creator")
@@ -290,7 +261,6 @@ with tab2:
                 st.warning("Please provide transcript text first.")
             else:
                 with st.spinner("Generating SOP..."):
-<<<<<<< HEAD
                     # Load existing KB for deduplication check
                     existing_kb = []
                     if os.path.exists(KB_PATH):
@@ -315,23 +285,11 @@ with tab2:
                                 update_sop_sheet(sop)
                                 update_knowledge_base_json(sop)
                                 st.toast("SOP saved to Registry & Agent Brain!")
-=======
-                    sop = generate_sop(transcript_text, metadata=meta)
-                    if sop:
-                        st.success("SOP Generated!")
-                        st.json(sop)
-                        
-                        # Update Storage
-                        update_sop_sheet(sop)
-                        update_knowledge_base_json(sop)
-                        st.toast("Saved to Registry & Agent Brain!")
->>>>>>> refs/remotes/origin/main
                     else:
                         st.error("SOP Generation failed.")
         else:
             st.info("SOP output will appear here.")
                     
-<<<<<<< HEAD
     st.subheader("SOP Registry (Knowledge Base)")
     if os.path.exists(CSV_PATH):
         try:
@@ -342,12 +300,6 @@ with tab2:
         st.dataframe(df_sheet, width="stretch")
 
 
-=======
-    st.subheader("SOP Registry (Sheet)")
-    if os.path.exists(CSV_PATH):
-        df_sheet = pd.read_csv(CSV_PATH)
-        st.dataframe(df_sheet, use_container_width=True)
->>>>>>> refs/remotes/origin/main
     else:
         st.info("Registry is empty.")
 
@@ -385,7 +337,3 @@ with tab3:
             st.markdown(response)
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": response})
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/main

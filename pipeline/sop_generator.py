@@ -6,10 +6,6 @@ import os
 import datetime
 import csv
 
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/main
 # Configuration
 API_KEY = "sk-XhmNFaPbVqeIwl3RqrAvfQ" # Using the key found in writer.py
 BASE_URL = "https://imllm.intermesh.net/v1"
@@ -46,7 +42,6 @@ CSV_REGISTRY_PATH = os.path.join(PROJECT_ROOT, "data", "sop_registry.csv")
 
 client = openai.OpenAI(api_key=API_KEY, base_url=BASE_URL)
 
-<<<<<<< HEAD
 SYSTEM_INSTRUCTION = """You are an Expert Process Engineer for IndiaMART.  
 Your job is to read a raw call transcript between a Seller and IndiaMART Support, identify every distinct problem raised by the seller, and convert each problem into a reusable and voice-friendly Standard Operating Procedure (SOP) suitable for an IndiaMART Voice AI Agent.
 
@@ -182,36 +177,6 @@ If the transcript describes the EXACT SAME problem as an existing SOP:
      "sentiment_transition": ...
   }
 If it is a NEW problem (or an IMPROVED solution), generate the full standard JSON object as described above.
-=======
-SYSTEM_INSTRUCTION = """
-### SYSTEM ROLE
-You are an expert Process Engineer for IndiaMART. Your goal is to convert raw call transcripts into re-usable Standard Operating Procedures (SOPs) for a Voice AI Agent.
-
-### OUTPUT FORMAT (JSON)
-{
-  "concern_summary": "String. A generic, high-level title. DO NOT use specific product names (e.g., use 'Product Switch' instead of 'Jeans to Charcoal').",
-  "resolution_sop": "String. A numbered list of executable steps. Use short sentences suitable for Text-to-Speech.",
-  "key_topics": ["String", "String"],
-  "sentiment_transition": "String"
-}
-
-### CONTENT GUIDELINES
-1. **concern_summary (Abstraction):**
-   - BAD: "Customer wants to change Jeans to Charcoal."
-   - GOOD: "Catalog Update: Product Category Switch"
-   - Rule: Abstract specific entities (names, products) into categories.
-
-2. **resolution_sop (Voice-First Formatting):**
-   - Must use numbered steps (1. Step one. 2. Step two.) within the string.
-   - Keep sentences punchy. Avoid long clauses.
-   - **Mandatory Structure:**
-     1. Verification/Login steps.
-     2. Navigation steps (e.g., "Go to X > Click Y").
-     3. The Core Action (e.g., "Click Deactivate").
-     4. **Upsell/Value Add** (Must be the final step).
-
-3. **key_topics:** Include technical terms (e.g., 'Seller Tools', 'GST') and the specific entities (e.g., 'Jeans', 'Charcoal') here so search still works.
->>>>>>> refs/remotes/origin/main
 """
 
 def transcribe_audio(file_pointer):
@@ -241,7 +206,6 @@ def update_sop_sheet(sop_data, csv_path=CSV_REGISTRY_PATH):
     headers = ["Timestamp", "concern_summary", "resolution_sop", "key_topics", "sentiment_transition"]
     
     # Flatten data for CSV
-<<<<<<< HEAD
     # IST Timezone (UTC+5:30)
     ist = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
     timestamp = datetime.datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S")
@@ -251,13 +215,6 @@ def update_sop_sheet(sop_data, csv_path=CSV_REGISTRY_PATH):
         "concern_summary": sop_data.get("concern_summary", ""),
         "resolution_sop": sop_data.get("resolution_sop", ""),
         "key_topics": sop_data.get("key_topics", []),
-=======
-    row_data = {
-        "Timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "concern_summary": sop_data.get("concern_summary", ""),
-        "resolution_sop": sop_data.get("resolution_sop", ""),
-        "key_topics": ", ".join(sop_data.get("key_topics", [])),
->>>>>>> refs/remotes/origin/main
         "sentiment_transition": sop_data.get("sentiment_transition", "")
     }
     
@@ -269,11 +226,8 @@ def update_sop_sheet(sop_data, csv_path=CSV_REGISTRY_PATH):
         if file_empty:
             writer.writeheader()
         writer.writerow(row_data)
-<<<<<<< HEAD
         
 
-=======
->>>>>>> refs/remotes/origin/main
 
 def update_knowledge_base_json(sop_data, json_path=OUTPUT_FILE):
     """
@@ -300,7 +254,6 @@ def update_knowledge_base_json(sop_data, json_path=OUTPUT_FILE):
     except Exception as e:
         print(f"Error updating KB JSON: {e}")
 
-<<<<<<< HEAD
 def generate_sop(transcript_text, metadata=None, existing_sops=None):
     context_str = ""
     if metadata:
@@ -316,18 +269,6 @@ def generate_sop(transcript_text, metadata=None, existing_sops=None):
     try:
         response = client.chat.completions.create(
             model="openai/gpt-5", # Updated to full model
-=======
-def generate_sop(transcript_text, metadata=None):
-    context_str = ""
-    if metadata:
-        context_str = f"\nCONTEXT:\n"
-        for k, v in metadata.items():
-            context_str += f"{k}: {v}\n"
-
-    try:
-        response = client.chat.completions.create(
-            model="openai/gpt-5-mini", # Updated fallback model
->>>>>>> refs/remotes/origin/main
             # Note: writer.py had issues with chat models vs completion models. 
             # The error in writer.py said "This is not a chat model". 
             # However, the code was using client.chat.completions.create.
@@ -339,7 +280,6 @@ def generate_sop(transcript_text, metadata=None):
             ],
             response_format={ "type": "json_object" }
         )
-<<<<<<< HEAD
         raw_json = json.loads(response.choices[0].message.content)
         
         # Robust handling for "wrapped" lists (e.g. {"sops": [...]})
@@ -361,9 +301,6 @@ def generate_sop(transcript_text, metadata=None):
             return raw_json
             
         return []
-=======
-        return json.loads(response.choices[0].message.content)
->>>>>>> refs/remotes/origin/main
     except Exception as e:
         print(f"Error generating SOP: {e}")
         # Fallback for the demo if API fails
@@ -378,7 +315,6 @@ def run_pipeline():
     
         df = pd.read_csv(INPUT_CSV)
         
-<<<<<<< HEAD
         # Load Existing KB for Deduplication
         knowledge_base = []
         if os.path.exists(OUTPUT_FILE):
@@ -393,9 +329,6 @@ def run_pipeline():
         # For this logic, let's treat the loaded KB as "Existing" and we append strictly new ones.
         
         initial_kb_size = len(knowledge_base)
-=======
-        knowledge_base = []
->>>>>>> refs/remotes/origin/main
     
         # Process all transcripts
         print(f"Processing {len(df)} transcripts...")
@@ -415,7 +348,6 @@ def run_pipeline():
             if 'Call recording url' in row: meta['Audio URL'] = row['Call recording url']
             
             print(f"Processing row {index}...")
-<<<<<<< HEAD
             # Pass existing KB to check for dupes
             sop_data_list = generate_sop(str(transcript), metadata=meta, existing_sops=knowledge_base)
             
@@ -439,16 +371,6 @@ def run_pipeline():
                     knowledge_base.append(sop_data)
                     update_sop_sheet(sop_data)
                     print(f"  -> Generated New SOP ID {sop_data['id']}")
-=======
-            sop_data = generate_sop(str(transcript), metadata=meta)
-            if sop_data:
-                sop_data['id'] = index
-                sop_data.update(meta) # Include meta in JSON
-                knowledge_base.append(sop_data)
-                
-                # Also to CSV
-                update_sop_sheet(sop_data)
->>>>>>> refs/remotes/origin/main
             
         print(f"Generated {len(knowledge_base)} SOPs.")
         
