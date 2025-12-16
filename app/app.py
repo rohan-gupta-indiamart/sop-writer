@@ -4,7 +4,7 @@ import sys
 import os
 import pandas as pd
 
-# Add parent dir to path to import agent/pipeline
+# Add parent dir to path to import agent/pipeline #
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from agent.brain import VoiceAgent
@@ -300,3 +300,4 @@ with tab3:
             st.markdown(response)
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": response})
+
