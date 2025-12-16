@@ -190,8 +190,13 @@ with tab1:
                 
     st.subheader("SOP Registry (Knowledge Base)")
     if os.path.exists(CSV_PATH):
-        df_sheet = pd.read_csv(CSV_PATH)
-        st.dataframe(df_sheet, use_container_width=True)
+        try:
+            df_sheet = pd.read_csv(CSV_PATH, on_bad_lines='skip', engine='python')
+        except Exception as e:
+            st.error(f"Error reading CSV: {e}")
+            df_sheet = pd.DataFrame()
+        st.dataframe(df_sheet, width="stretch")
+
     else:
         st.info("Knowledge Base is empty.")
 
@@ -288,8 +293,14 @@ with tab2:
                     
     st.subheader("SOP Registry (Knowledge Base)")
     if os.path.exists(CSV_PATH):
-        df_sheet = pd.read_csv(CSV_PATH)
-        st.dataframe(df_sheet, use_container_width=True)
+        try:
+            df_sheet = pd.read_csv(CSV_PATH, on_bad_lines='skip', engine='python')
+        except Exception as e:
+            st.error(f"Error reading Registry: {e}")
+            df_sheet = pd.DataFrame()
+        st.dataframe(df_sheet, width="stretch")
+
+
     else:
         st.info("Registry is empty.")
 

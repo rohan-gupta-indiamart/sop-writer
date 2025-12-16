@@ -6,6 +6,7 @@ import os
 import datetime
 import csv
 
+
 # Configuration
 API_KEY = "sk-XhmNFaPbVqeIwl3RqrAvfQ" # Using the key found in writer.py
 BASE_URL = "https://imllm.intermesh.net/v1"
@@ -56,6 +57,7 @@ You MUST identify multiple problems if present.
   {
     "concern_summary": "String. High-level, abstracted problem title. DO NOT include specific product names, brand names, cities, seller IDs, or overly specific details.",
     "resolution_sop": "String. A numbered procedural script (1., 2., 3., ...) with short, crisp TTS-ready sentences. Must include upsell/value-add in the final step.",
+    "key_topics": ["String", "String"],
     "sentiment_transition": "String"
   }
 ]
@@ -150,7 +152,20 @@ If the answer is no, REMOVE IT.
 
 Your final output must contain ONLY transcript-grounded information.
 
+
+### SOP IMPROVEMENT CHECK
+If the transcript describes a problem matching an EXISTING SOP, check the outcome:
+1. Was the customer unsatisfied with the initial/standard resolution?
+2. Did a different executive (or the same one) provide a "Better Solution" that resolved the issue?
+
+If YES (Better Solution Found):
+- DO NOT use `duplicate_of_id`.
+- Generate the FULL SOP with the NEW, BETTER resolution.
+- Modify the `concern_summary` to include "(Improved)".
+- This will allow the system to capture the better method.
+
 ### DUPLICATE CHECK
+(If NO better solution is found, proceed with duplicate check)
 You have access to a list of "Existing SOPs" (titles).
 Check if the current transcript is describing a problem that is ALREADY covered by one of these titles.
 If the transcript describes the EXACT SAME problem as an existing SOP:
@@ -162,7 +177,7 @@ If the transcript describes the EXACT SAME problem as an existing SOP:
      "key_topics": [<new topics found in this call>],
      "sentiment_transition": ...
   }
-If it is a NEW problem, generate the full standard JSON object as described above.
+If it is a NEW problem (or an IMPROVED solution), generate the full standard JSON object as described above.
 """
 
 def transcribe_audio(file_pointer):
@@ -200,7 +215,7 @@ def update_sop_sheet(sop_data, csv_path=CSV_REGISTRY_PATH):
         "Timestamp": timestamp,
         "concern_summary": sop_data.get("concern_summary", ""),
         "resolution_sop": sop_data.get("resolution_sop", ""),
-        # "key_topics" removed from prompt
+        "key_topics": sop_data.get("key_topics", []),
         "sentiment_transition": sop_data.get("sentiment_transition", "")
     }
     
@@ -212,6 +227,8 @@ def update_sop_sheet(sop_data, csv_path=CSV_REGISTRY_PATH):
         if file_empty:
             writer.writeheader()
         writer.writerow(row_data)
+        
+
 
 def update_knowledge_base_json(sop_data, json_path=OUTPUT_FILE):
     """

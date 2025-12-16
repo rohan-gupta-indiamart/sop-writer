@@ -1,434 +1,159 @@
 [
   {
-    "concern_summary": "Catalog Update: Replace Old Product Listings and Add New Product",
-    "resolution_sop": "1. Verify the seller by confirming the registered mobile number and name. 2. Instruct the seller to download and open the IndiaMART mobile app. 3. Have the seller log in using the registered mobile number. 4. Ask the seller to confirm they see \"Hi <Name>\" at the top. 5. Tap the three horizontal lines (menu) at the top. 6. Go to Seller Tools. 7. Open Manage Product. 8. Locate the old product (e.g., the listing showing \"Jeans\" or \"Man Jeans\"). 9. Tap the product name to edit it if you want to rename it. 10. If editing is not desired, tap the three dots next to the product and choose Deactivate. 11. Confirm deactivation to remove the old product from active listings. 12. Go to Add Product to create a new listing. 13. Enter the new product name (e.g., charcoal). 14. Fill price, quantity, description, and specifications. 15. Add GST details if available. 16. Save the new product and verify it appears in Manage Product. 17. Offer to perform deactivation or product addition on behalf of the seller if they want help. 18. Recommend subscription options and explain GST benefits for business growth. 19. Offer transfer to the premium department for promotional subscriptions if the seller is interested.",
+    "concern_summary": "Lead Generation: Low and Irrelevant Leads",
+    "resolution_sop": "1. Verify the registered mobile number and firm name. Log in to the Seller Panel or IndiaMART Seller App. 2. Go to Leads > Buy Leads. Check current availability in your active categories and locations. 3. Go to Leads > Lead Manager. Review the last 30 days of leads. Mark irrelevant leads to train relevance. 4. Go to Catalog > Manage Services/Categories. Add all relevant subcategories under your service domain. Save changes. 5. Go to Profile > Service Locations. Confirm coverage matches your business scope (for example, all India). Save. 6. Go to My Account > Plan Details. Confirm the premium plan is active. 7. Go to Notifications/Alerts. Turn on SMS, email, and app lead alerts. 8. If Buy Leads show low or zero availability, go to Help > Raise a Ticket > Low/Irrelevant Leads. Attach examples and submit. 9. Request a priority callback from the premium desk or the account manager. Share preferred time slots. Note the case ID. 10. For more visibility and better relevance, offer a quick catalog and category audit and guide on keywords to improve lead quality.",
     "key_topics": [
-      "Seller Tools",
-      "Manage Product",
-      "Add Product",
-      "Deactivate",
-      "Three Dots Menu",
-      "Mobile App",
-      "GST",
-      "Subscription",
-      "Edit Product Name",
-      "Jeans",
-      "Man Jeans",
-      "Charcoal",
-      "Black Bear"
+      "Lead Quality",
+      "Buy Leads",
+      "Lead Manager",
+      "Premium Supplier",
+      "Category Mapping",
+      "IndiaMART Seller App",
+      "Trademark registration services",
+      "Trademark law attorney",
+      "Copyright services",
+      "Intellectual property management",
+      "Trademark litigation",
+      "All India service"
     ],
-    "sentiment_transition": "Neutral/briefly confused to cooperative and satisfied after resolution",
+    "sentiment_transition": "Concerned \u2192 Neutral",
     "id": 0
   },
   {
-    "concern_summary": "Service Listing Activation and GST Eligibility",
-    "resolution_sop": "1. Verify caller identity. Ask for caller name and registered company name. Confirm the registered mobile number.\n2. Confirm GST ownership. Ask if GST is in the business name or another person's name.\n3. Advise eligibility based on GST. If GST is not in your business name, recommend free listing only. If GST is in the same business name, explain paid service eligibility.\n4. Ask for missing business details. Collect full address and a nearby landmark.\n5. Login and navigation. Open the IndiaMART app. Tap the three horizontal lines on the top-left.\n6. Go to Seller Store. Click Seller Store > Manage Product.\n7. Update address and service locations. Edit business address and add landmark so buyers can find you.\n8. Add or edit services. For each service add a clear photo, title, price, short description, and service location. Remove unrelated products (for example, air cooler) if present.\n9. Verify category and nature of business. Ensure service category matches the GST nature of business if you plan to upgrade.\n10. Set up PNS numbers. Link up to five alternate contact numbers to the PNS so incoming calls ring on all linked numbers.\n11. Confirm listing goes live. Save changes and verify the listing appears correctly in search results.\n12. Upsell/Value Add: If GST is in the same business name, offer annual paid services for BuyLeads, priority placement, and an assigned account manager to handle queries and improve lead conversion.",
+    "concern_summary": "Account Manager Unreachable",
+    "resolution_sop": "1. Verify the registered mobile number and firm name. Log in to IndiaMART systems. 2. Open internal CRM. Retrieve the assigned account manager\u2019s name, number, and email. 3. Trigger a priority callback from the account manager. Set the preferred callback window and mark urgency. 4. Share the manager\u2019s contact details and the ticket ID via SMS and email to the registered contacts. 5. Offer alternate premium support options, such as the premium desk and in\u2011app support. Attempt a live transfer if available. 6. If no response within the agreed window, escalate to the premium support queue. Add notes on missed calls and business impact. 7. As a value add, offer to schedule a performance review call to optimize categories and improve lead flow.",
     "key_topics": [
-      "GST",
-      "PNS number",
-      "Seller Store",
-      "Manage Product",
-      "IndiaMART App",
-      "Free listing",
-      "Paid services",
-      "BuyLeads",
       "Account Manager",
-      "Sunil Kumar Painting Services",
-      "Rajnagar extension",
-      "DVIP mall",
-      "Asian paint",
-      "3D painting",
-      "Home painting",
-      "Air cooler"
+      "Premium Desk",
+      "Callback Escalation",
+      "Ticket ID",
+      "IndiaMART Seller App",
+      "Lead Issue"
     ],
-    "sentiment_transition": "From confused/concerned about activation to cooperative and satisfied after guided profile updates.",
+    "sentiment_transition": "Frustrated \u2192 Neutral",
     "id": 1
   },
   {
-    "concern_summary": "Dashboard Metrics: Understanding Buyer Enquiry Columns",
-    "resolution_sop": "1. Greet the caller and ask for permission to verify the account. 2. Ask for the registered mobile number. 3. Ask for company name and location and confirm them aloud. 4. Confirm account type: free seller or paid seller. 5. If audio is poor, ask the caller to repeat or offer to call back. 6. Instruct the caller to log in. 7. Navigate: Go to Dashboard > Enquiries or Leads. 8. Click any requirement or buyer enquiry to open the detailed view. 9. Point to the columns labeled 'Calls Attempted' and 'Responses' on that enquiry. 10. Explain: 'Calls Attempted' shows the recorded call attempts associated with that enquiry. 11. Explain: 'Responses' shows the number of buyer replies or interactions on that enquiry. 12. Clarify privacy: explain that full buyer contact details are accessible only via paid/premium packages or when the buyer shares contact info. 13. If the caller requests to view a buyer page, offer a guided walkthrough of a public sample requirement. Do not share private buyer contact details. 14. If the caller is evaluating premium options, offer to arrange a sales callback and capture the preferred time. 15. Upsell/Value Add: Summarize benefits of premium leads\u2014direct buyer details, buyleads, and priority visibility\u2014and offer to connect to sales now.",
+    "concern_summary": "Catalog Update: Add Products and Photos via App",
+    "resolution_sop": "1. Verify the seller and confirm access to the IndiaMART app. 2. Ask the seller to log in with the registered mobile number. 3. In the app, go to Manage Products. 4. Tap Add Product or select a product and tap Edit. 5. Enter the product name and a clear description. 6. Upload clear product photos from the gallery. 7. Review details and save the listing. 8. If they prefer, ask them to share photos on WhatsApp for assistance. 9. Share that once GST is available, a paid plan can boost visibility and includes design support.",
     "key_topics": [
-      "Seller Dashboard",
-      "Enquiries / Leads",
-      "Calls Attempted",
-      "Responses",
-      "Buyer Profile",
-      "Free Seller",
-      "Premium Service",
-      "Buy Leads",
-      "Sales Callback",
-      "Turmeric",
-      "Rice",
-      "Gurugram"
+      "IndiaMART app",
+      "Manage Products",
+      "Product photos",
+      "Product description",
+      "Listing update",
+      "WhatsApp Business",
+      "PAN card number",
+      "GST number",
+      "Lucky photo"
     ],
-    "sentiment_transition": "Customer started confused and seeking clarification. Conversation became frustrated due to audio and miscommunication. Call ended unresolved with ask to escalate to sales.",
+    "sentiment_transition": "Confused \u2192 Satisfied",
     "id": 2
   },
   {
-    "concern_summary": "Service Listing and Lead Acquisition for Manpower Provider",
-    "resolution_sop": "1. Ask the caller to confirm the registered seller name and business. Ask them to open the IndiaMART app and confirm they are logged in.\n2. Instruct the seller to tap the three horizontal lines on the top-left of the app.\n3. Tell the seller to tap Seller Tools from the menu.\n4. Tell the seller to tap Manage Product to view existing listings.\n5. Guide the seller to add or edit products by tapping Add Product or Multiple Add.\n6. Instruct the seller to upload 3 to 4 clear photos per product, add a concise description, and set prices. Save each product.\n7. Advise the seller to raise the listing score above 80 by completing photos, description, and pricing to improve visibility.\n8. If irrelevant inquiries came from a wrong requirement, tell the seller to delete that requirement to stop calls.\n9. If they need immediate buyer contacts, show them the Buy Lead option and explain single-lead consumption to connect with buyers.\n10. Offer support hours and next steps: tell them to contact support between 8:00 AM and 9:00 PM for help or to send photos via WhatsApp for listing assistance.\n11. Upsell: Recommend buying Buy Lead credits for instant leads and suggest improving multiple listings to boost organic inquiries.",
+    "concern_summary": "Sales Callback: Paid Package Consultation Scheduling",
+    "resolution_sop": "1. Verify the seller and confirm the registered contact number. 2. Confirm GST status and readiness for paid plans. 3. Ask for a preferred callback time and date. 4. Create a callback request in the sales scheduling tool. 5. Add notes on GST timeline and current listing status. 6. Set the callback to the requested time and assign it to the sales team. 7. Confirm the scheduled time with the seller and provide the reference if available. 8. Remind that paid plans offer higher visibility and dedicated setup support.",
     "key_topics": [
-      "Seller Tools",
-      "Manage Product",
-      "Add Product",
-      "Buy Lead",
-      "Listing Score",
-      "3-4 Photos",
-      "Description and Price",
-      "Security manpower",
-      "Housekeeping manpower",
-      "Manpower service",
-      "WhatsApp for photos",
-      "Support hours 8:00 AM-9:00 PM"
+      "Paid packages",
+      "Callback scheduling",
+      "12 o'clock callback",
+      "GST pending",
+      "Sales consultation",
+      "WhatsApp"
     ],
-    "sentiment_transition": "Customer started confused and concerned about unwanted calls. After guidance on app navigation and listing steps they became clarified and reassured.",
+    "sentiment_transition": "Neutral \u2192 Cooperative",
     "id": 3
   },
   {
-    "concern_summary": "Catalog Update: Upload Product Images and Details via Seller Portal",
-    "resolution_sop": "1. Greet the seller and confirm identity. Ask for the registered mobile number and registered business name. 2. Verify which mobile number is registered on the portal. Clarify if multiple numbers belong to the same seller. 3. Instruct the seller to open seller.indiamart.com. Click Login. Enter the registered mobile number. Complete OTP verification. 4. From the dashboard go to Products > My Products. Locate the specific product entry to update. 5. Click the product to open its edit page. On the right/side panel find Photos & Videos or Media. 6. Click Upload. Add clear images and optional video. Include front view, close-up of bristles/texture, packaging, and a usage/context image. 7. Fill product attributes: product type, bristle type, disposable or reusable, brand, MRP/price, short description, and benefits. 8. Save the changes. Preview the product page to confirm photos and details display correctly. 9. If a sales rep provided an official WhatsApp number, you may send photos there. Note: photos sent to WhatsApp may be attached but you must still update details on the portal. 10. If the product does not appear, clear browser cache or log out and log in again. If issues persist, request a support callback or raise a help ticket. 11. Offer Premium Services as value add: explain lead delivery, priority listing, and TrustSeal verification. Ask if the seller wants a callback for plan details.",
+    "concern_summary": "Search Visibility: Company Profile Not Showing on Google",
+    "resolution_sop": "1. Verify the registered mobile number and email. 2. Log in to the Seller Panel with the correct account. 3. Go to Profile. 4. Open Company Profile. 5. Check the Display Name. Fix any spelling or spacing issues. Save changes. 6. Click View Public Profile and confirm the page opens. 7. Copy the public profile link and search your company name on Google to check visibility. 8. If not visible, go to Help and raise a ticket with the subject Google search visibility. Paste the public profile link in the ticket. 9. For better discovery, keep products active, add clear photos, and stay active daily for higher visibility.",
     "key_topics": [
-      "Seller Tools",
-      "seller.indiamart.com",
-      "Product Listing",
-      "Photos & Videos",
-      "WhatsApp upload",
-      "Premium Services",
-      "TrustSeal",
-      "Leads",
-      "Toothbrush",
-      "Bamboo toothbrush",
-      "Bristle type",
-      "MRP / Price"
+      "Google search visibility",
+      "Public Profile",
+      "Company Profile",
+      "TrustSeal package",
+      "Seller Panel"
     ],
-    "sentiment_transition": "Neutral/uncertain due to registration confusion \u2192 Cooperative and receptive to instructions; politely declined premium offer.",
+    "sentiment_transition": "Concerned \u2192 Neutral",
     "id": 4
   },
   {
-    "concern_summary": "Catalog Update: Product Listing Change",
-    "resolution_sop": "1. Confirm the caller by asking and verifying the registered mobile number. 2. Instruct the user to download and open the IndiaMART app. 3. Log in using the verified mobile number and OTP. 4. Confirm the user sees the greeting with their name at the top. 5. Tap the three-line menu at the top. 6. Tap Seller Tools. 7. Tap Manage Product. 8. Locate the existing product entry in the list. 9. Tap the product name or the three dots beside it. 10. To remove old listings, choose Deactivate from the options and confirm. 11. To update the same listing, tap the product name, edit the name and details, and save. 12. To add the new product, tap Add Product. 13. Enter product name, price, quantity, description, and specifications. 14. Save the new product and confirm it appears in Manage Product. 15. Verify GST details are present for the account. 16. Offer monthly or annual subscription for promotion and premium assistance. 17. If the user agrees, transfer or connect them to the premium team for lead promotion and support.",
+    "concern_summary": "Lead Location Targeting Update",
+    "resolution_sop": "1. Verify the registered mobile number and business name on the account. 2. Ask the user to log in to the IndiaMART Seller app. 3. From the home screen, tap the three-line menu. 4. Go to BuyLeads and open Latest BuyLeads. 5. Confirm the request is about buylead location, not company address display. 6. Open lead location preferences or filters. 7. Select the desired state only as the preferred location for leads. 8. Save the changes and confirm new leads reflect the selected state. 9. For higher visibility and more relevant leads in the chosen area, suggest upgrading to a paid package.",
     "key_topics": [
-      "IndiaMART app",
-      "Mobile login",
+      "BuyLeads",
+      "Latest BuyLeads",
+      "IndiaMART application",
+      "Maharashtra",
       "Three-line menu",
-      "Seller Tools",
-      "Manage Product",
-      "Add Product",
-      "Deactivate",
-      "Edit product name",
-      "Price",
-      "Quantity",
-      "Description",
-      "Specifications",
-      "GST",
-      "Subscription (monthly/annual)",
-      "Jeans",
-      "Charcoal",
-      "Wood charcoal"
+      "Registered mobile number",
+      "Video meet link",
+      "Shory Enterprises",
+      "Nagpur"
     ],
-    "sentiment_transition": "Neutral/uncertain to guided and satisfied",
+    "sentiment_transition": "Confused \u2192 Cooperative",
     "id": 5
   },
   {
-    "concern_summary": "Lead Purchase vs Seller Listing Mismatch",
-    "resolution_sop": "1. Verify customer identity. Ask for registered name, company name, and mobile number. Confirm the transaction amount and time. 2. Ask the customer to log in or guide them to log in. Say: Go to Seller Dashboard > Payments > Transactions. 3. In Transactions, locate the \u20b9470 entry. Click View Details. 4. Check transaction type. If it shows 'Single Lead' or 'Buyer Details', tell the customer this payment bought one buyer lead. 5. Navigate to My Requirements or Enquiries. Click the listed requirement. If the customer did not intend to post a requirement, click Delete or Disable. 6. Navigate to My Catalog > My Listings. Confirm seller listings are active and correct. Turn off any unwanted 'buy' posts. 7. If the customer requests a refund and it meets policy, Click Raise Refund or Contact Billing Team. Note the refund reference ID and share ETA. 8. If the transaction is non-refundable or within policy limits, explain options clearly: use the single lead contact, or request support to escalate. 9. Offer immediate assistance: if the customer wants, arrange a callback from the packages team. Transfer the call or create a callback ticket. 10. Close with value add. Explain package benefits for sellers. Offer a short trial or a package demo to get daily leads.",
+    "concern_summary": "Lead Credit or Reversal Policy Clarification",
+    "resolution_sop": "1. Verify the registered phone number and seller identity. 2. Ask the seller to open their leads and go to Consumed Byleads. 3. Open the specific bylead. Confirm buyer name, city, date, and quantity. 4. Confirm what the buyer said and note the reason, for example, not their requirement. 5. Clearly state the policy: lead reversal is not available. 6. Record feedback on that bylead and submit it for review. 7. Advise selecting fresh byleads between 0 to 4 hours, with WhatsApp number, mobile number, and email, before consuming. 8. Value-add: Offer a short video meet to review lead selection and follow-up tips for better conversions.",
     "key_topics": [
-      "Seller Tools",
-      "Payments",
-      "Leads",
-      "Single Lead",
-      "Requirements",
-      "My Catalog",
-      "Refund",
-      "Packages",
-      "Buyer Details",
-      "Transactions",
-      "silica sand",
-      "\u20b9470",
-      "Sai Enterprises"
+      "Lead Reversal Policy",
+      "Bylead",
+      "Consumed Leads",
+      "Feedback submission",
+      "Fresh bylead (0\u20134 hours)",
+      "WhatsApp number and email",
+      "Requirement mismatch"
     ],
-    "sentiment_transition": "Customer confused and frustrated about payment purpose to calmer and agreeable after explanation and callback arrangement.",
+    "sentiment_transition": "Frustrated \u2192 Neutral",
     "id": 6
   },
   {
-    "concerns": [
-      {
-        "concern_summary": "Catalog integrity issue due to unauthorized edits and product deactivation",
-        "resolution_sop": "1. Verify the seller\u2019s identity and confirm they are logged in. 2. Ask if they are on the mobile app. 3. In the app, tap Add Product. 4. Tap the three dots on the top right. 5. Tap Deactivate products to view inactive items. 6. Open each inactive product and tap Activate. 7. Open a few active products and compare photos, titles, and details with the seller\u2019s original uploads or screenshots. 8. If titles or material show brass instead of metal, note the exact items and changes needed. 9. Inform support on the call to correct names and material from brass to metal. 10. Request restoration of removed photos and descriptions for each affected model. 11. Ask the agent to raise a concern and record that no catalog changes should occur without the seller\u2019s permission. 12. Request confirmation once updates and restorations are completed. 13. For added value, once the catalog is back to normal, suggest considering a longer-duration plan for stable visibility and continuity.",
-        "key_topics": [
-          "IndiaMART App",
-          "Add Product",
-          "Deactivate products",
-          "Activate product",
-          "Catalog Update",
-          "Product Photos",
-          "Product Title Change",
-          "Material Attribute",
-          "Designing Team",
-          "Account Manager",
-          "Escalation",
-          "Brass Srinath card dashboard idol",
-          "Vishnu Tilak",
-          "Balaji Tilak"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Assured"
-      }
+    "concern_summary": "Lead Detail Discrepancy in Bylead",
+    "resolution_sop": "1. Verify the registered phone number and seller identity. 2. Ask the seller to open the same bylead they consumed. 3. Cross-check the lead details on screen, including buyer city and requirement. 4. If the city or details shown differ from what the seller saw, request a screenshot for clarity. 5. Offer a video meet link so the seller can share their screen and show the exact bylead view. 6. Note if it is a direct inquiry or a posted bylead, and document the discrepancy. 7. Submit the discrepancy for review so the bylead can be checked. 8. Value-add: Advise reviewing all specifications and location before consuming fresh byleads, and follow up via WhatsApp for faster response.",
+    "key_topics": [
+      "Bylead",
+      "Lead details mismatch",
+      "City discrepancy",
+      "Gorakhpur vs Lucknow",
+      "Screenshot capture",
+      "Video meet support",
+      "Direct inquiry vs posted bylead"
     ],
+    "sentiment_transition": "Confused \u2192 Clarified",
     "id": 7
   },
   {
-    "sops": [
-      {
-        "concern_summary": "Deactivated Products: Reactivation Process",
-        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login access. 2. Open the IndiaMART Seller app. 3. Tap Add Product on the home screen. 4. Tap the three dots on the top right. 5. Select Deactivated Products. 6. Select the items you want to restore. 7. Tap Activate. 8. Check Active to confirm the listings are visible. 9. For higher visibility and lead flow, consider upgrading your plan.",
-        "key_topics": [
-          "IndiaMART Seller app",
-          "Add Product",
-          "Three dots menu",
-          "Deactivated Products",
-          "Activate",
-          "Inactive listings",
-          "Catalog visibility"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Assured"
-      },
-      {
-        "concern_summary": "Catalog Corrections: Wrong Material and Title",
-        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login access. 2. Open the IndiaMART Seller app. 3. Open the affected product listing. 4. Tap Edit. 5. Correct the Product Name. 6. Update the Material field from brass to metal as applicable. 7. Review size, color, dimensions, and packaging fields. 8. Save changes. 9. Repeat for all impacted listings. 10. For better lead quality and trust, consider a long-term plan.",
-        "key_topics": [
-          "Material attribute",
-          "Brass vs Metal",
-          "Product Title",
-          "Edit Product",
-          "Size",
-          "Color",
-          "Dimensions",
-          "Packaging",
-          "Dashboard idol",
-          "Vishnu Tilak",
-          "Balaji Tilak"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Assured"
-      },
-      {
-        "concern_summary": "Product Images: Restore Missing Photos",
-        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login access. 2. Open the IndiaMART Seller app. 3. Open the product with missing photos. 4. Tap Edit, then Photos. 5. Upload group photos, individual photos, and multi-angle shots as provided earlier. 6. Save changes. 7. Repeat for each model that needs more photos. 8. For better conversions, maintain clear, high\u2011resolution images and consider upgrading your plan for more visibility.",
-        "key_topics": [
-          "Product photos",
-          "Group photo",
-          "Individual photo",
-          "Multi-angle images",
-          "Edit > Photos",
-          "Catalog media",
-          "Image count"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Assured"
-      },
-      {
-        "concern_summary": "Unauthorized Catalog Changes: Escalation and Prevention",
-        "resolution_sop": "1. Verify the seller\u2019s identity and confirm account details. 2. Confirm which products were modified and note the modified date shown in the panel. 3. Raise a concern to the catalog/design team about unauthorized changes. 4. Request rollback or correction for titles, material, photos, and activation status. 5. Add an account note: no catalog changes without seller approval. 6. Share the ticket ID and expected resolution timeline with the seller. 7. After resolution, offer a brief catalog health review and suggest an annual plan for stable support and better lead visibility.",
-        "key_topics": [
-          "Unauthorized changes",
-          "Designing team",
-          "Modified date (28 November)",
-          "Rollback request",
-          "Account note: No changes without approval",
-          "Ticket escalation",
-          "Catalog integrity"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Assured"
-      }
+    "concern_summary": "Lead Quality Complaint Submission",
+    "resolution_sop": "1. Verify the seller\u2019s identity and confirm active login. 2. Open the Seller Panel and go to Lead Manager or Byleads. 3. Open each affected lead from recent dates. 4. Use the Dislike or Report option on the lead. 5. Add clear notes: buyer not answering calls, WhatsApp off, and dates of attempts. 6. Submit the complaint to generate a ticket. 7. Share the specific lead details if asked by support for faster review. 8. Keep your phone reachable for the team\u2019s callback on the ticket. 9. For added value, request a call from your Account Manager to review lead quality and optimization tips.",
+    "key_topics": [
+      "Lead Manager",
+      "Byleads",
+      "dislike/report action",
+      "ticket creation",
+      "unresponsive buyers",
+      "call attempts log",
+      "Account Manager callback"
     ],
+    "sentiment_transition": "Frustrated \u2192 Calm",
     "id": 8
   },
   {
-    "results": [
-      {
-        "concern_summary": "Catalog Recovery: Reactivate Deactivated Listings",
-        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login to the IndiaMART Seller app. 2. Open the app and go to Add Product at the bottom-right. 3. Tap the three dots on the top-right. 4. Select Deactivate Product to view all deactivated items. 5. Tap each required product and choose Activate. 6. Open one reactivated product and review details to confirm nothing is deleted; deactivation only hides the listing. 7. If any item fails to activate, note the product names and raise a concern to support. 8. Confirm with the seller that the catalog is visible again. 9. For more visibility after reactivation, consider upgrading the plan once the catalog is restored.",
-        "key_topics": [
-          "IndiaMART Seller app",
-          "Add Product",
-          "Three dots menu",
-          "Deactivate Product",
-          "Activate",
-          "Catalog hidden vs deleted",
-          "Deactivated products"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Assured"
-      },
-      {
-        "concern_summary": "Catalog Correction: Wrong Material and Titles After Assisted Editing",
-        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login access. 2. Open the Seller app and locate the affected product from the catalog. 3. Open the product and use the Edit option. 4. Correct the Product Title as per the seller\u2019s original naming. 5. Update the Material field from brass to metal as instructed by the seller. 6. Review key attributes: size, dimensions, color, packaging, and mounting. 7. Save the changes and recheck the live view. 8. For multiple items, document examples and raise a concern to support to apply bulk corrections. 9. After corrections, suggest a plan upgrade to improve lead quality and visibility.",
-        "key_topics": [
-          "Product Title",
-          "Material field",
-          "Brass vs Metal",
-          "Attributes: size, dimensions, color, packaging",
-          "Dashboard idol",
-          "Vishnu Tilak",
-          "Balaji Tilak",
-          "Modify ID"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Assured"
-      },
-      {
-        "concern_summary": "Media Restoration: Missing Product Photos After Catalog Update",
-        "resolution_sop": "1. Verify the seller\u2019s identity and confirm login. 2. Open the affected product in the Seller app. 3. Use the Edit or Photos option to manage images. 4. Add all required images: group photo, individual photo, and angle shots. 5. Set the best image as the primary image. 6. Save and preview the product to confirm image count is restored. 7. If images were removed during recent changes, raise a concern to support with dates and product links for restoration review. 8. Confirm with the seller that visual completeness is restored. 9. Recommend upgrading the plan to boost image-rich listings in search.",
-        "key_topics": [
-          "Product photos",
-          "Group photo",
-          "Individual photo",
-          "Angle shots",
-          "Primary image",
-          "Designing team",
-          "Image removal"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Assured"
-      },
-      {
-        "concern_summary": "Service Control: Prevent Unauthorized Edits by Internal Teams",
-        "resolution_sop": "1. Verify the seller\u2019s identity and confirm current account details. 2. Acknowledge the unauthorized changes and capture examples and dates. 3. Create a support ticket with subject: Unauthorized Catalog Changes. 4. Add product examples, screenshots, and modification dates. 5. Request rollback of changes and restoration of original titles, material, and photos. 6. Add an account note: Do not edit catalog without seller approval. 7. Notify the Account Manager and the design team through the ticket. 8. Share the ticket ID with the seller and set a clear follow-up time. 9. After resolution, suggest a plan upgrade to maximize lead quality once catalog stability is ensured.",
-        "key_topics": [
-          "Designing team",
-          "Account Manager",
-          "Escalation",
-          "Unauthorized changes",
-          "Audit trail",
-          "Modified on 28 November",
-          "Rollback request"
-        ],
-        "sentiment_transition": "Angry \u2192 Calm"
-      }
+    "concern_summary": "App Onboarding: Installation and Login Guidance",
+    "resolution_sop": "1. Verify the caller\u2019s name and relation to the business. 2. Confirm the registered mobile number on the account. 3. Send the official IndiaMART application download link via SMS to that number. 4. Ask the seller to install the IndiaMART application using the same link. 5. Open the IndiaMART application. 6. Log in with the registered mobile number. 7. Confirm the app is open and the login is successful. 8. If there is background noise or poor network, pause guidance and schedule a callback at a specific time. 9. Resume with basic app usage training on the callback. 10. For better visibility and more leads, suggest exploring an upgraded plan after onboarding.",
+    "key_topics": [
+      "IndiaMART App",
+      "App Installation Link via SMS",
+      "Login with Mobile Number",
+      "Account Onboarding",
+      "Training Callback",
+      "Background Noise",
+      "Account Manager: Neha Dubey",
+      "Ankit Garments",
+      "Noida, Uttar Pradesh"
     ],
+    "sentiment_transition": "Confused \u2192 Neutral",
     "id": 9
-  },
-  {
-    "result": [
-      {
-        "concern_summary": "Unauthorized Product Deactivation",
-        "resolution_sop": "1. Verify the seller's identity and confirm login to the IndiaMART Seller app. 2. On the home screen, tap Add Product at the bottom-right. 3. Tap the three dots on the Add Product screen. 4. Select Deactivated Products. 5. Select the required items and tap Activate. 6. Refresh and confirm the products appear under Active. 7. For better visibility and stability, consider upgrading to a longer-duration plan.",
-        "key_topics": [
-          "IndiaMART Seller App",
-          "Add Product",
-          "Three dots menu",
-          "Deactivated Products",
-          "Activate",
-          "Catalog Restoration",
-          "Seller Tools",
-          "Modified on 28 November"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Reassured"
-      },
-      {
-        "concern_summary": "Product Attributes Incorrectly Edited",
-        "resolution_sop": "1. Verify the seller's identity and confirm login to the Seller Panel or app. 2. Go to the product list (Active or Deactivated). 3. Open a product that shows incorrect details. 4. Tap Edit. 5. Update Material from Brass to Metal and correct the product title. 6. Review attributes like size, color, dimensions, and packaging. 7. Save changes and repeat for other affected products. 8. For faster edits and better lead visibility, consider upgrading your plan.",
-        "key_topics": [
-          "Material",
-          "Brass",
-          "Metal",
-          "Product Title",
-          "Attributes: size, color, dimensions, packaging",
-          "Dashboard idol",
-          "Vishnu Tilak",
-          "Balaji Tilak",
-          "Adhesive base",
-          "Mounting"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Reassured"
-      },
-      {
-        "concern_summary": "Missing or Reduced Product Images",
-        "resolution_sop": "1. Verify the seller's identity and confirm login to the Seller app. 2. Open the target product from the list. 3. Tap Edit and open the Photos or Images section. 4. Upload all required photos, including group, individual, and multiple angles. 5. Set the best image as the primary photo. 6. Save and preview the gallery to confirm. 7. For better conversions and exposure, consider a plan upgrade.",
-        "key_topics": [
-          "Photos",
-          "Group photo",
-          "Individual photo",
-          "Multiple angles",
-          "Image gallery",
-          "Per model 7+ photos",
-          "Active product shows two photos"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Reassured"
-      },
-      {
-        "concern_summary": "Escalation for Unauthorized Catalog Changes",
-        "resolution_sop": "1. Verify the seller's identity and confirm account details. 2. Summarize the issue: products were deactivated, names changed to brass, and photos reduced, without consent. 3. Open the Support or Help section in the Seller Panel. 4. Raise a ticket under Catalog or Design Changes. 5. Add a description and attach screenshots showing original metal titles and photo counts. 6. Request restoration and ask that no changes be made without explicit approval. 7. Share the ticket reference with the seller and confirm follow-up. 8. For priority handling and dedicated assistance, consider upgrading to a longer-duration plan.",
-        "key_topics": [
-          "Catalog design team",
-          "Unauthorized changes",
-          "Escalation",
-          "Support ticket",
-          "Satisfaction mail",
-          "Catalog update",
-          "Screenshots evidence",
-          "Product names changed to Brass",
-          "Metal vs Brass"
-        ],
-        "sentiment_transition": "Frustrated \u2192 Reassured"
-      }
-    ],
-    "id": 10
-  },
-  {
-    "concern_summary": "Catalog Integrity: Unauthorized Edits by Internal Team",
-    "resolution_sop": "1. Verify your login on the IndiaMART app or Seller Panel. 2. Open Products and review recently modified items. 3. Note unwanted changes like name edits, material changes, or photo removal. 4. Take screenshots of the current view and note the modification date. 5. Go to Support or Help and raise a concern titled 'Unauthorized catalog changes'. 6. Add details: what changed, when it changed, and request restoration to the previous version. 7. Ask to record a note: 'No changes without my explicit approval' and request the design team not to modify or contact without permission. 8. Ask your Account Manager to confirm the action plan and timeline. 9. For better monitoring and lead visibility, consider upgrading to a longer-duration plan.",
-    "key_topics": [
-      "Designing Team",
-      "Unauthorized changes",
-      "Catalog Integrity",
-      "Account Manager",
-      "Raise Concern",
-      "Ticket",
-      "Modified on 28 November",
-      "Dashboard idol"
-    ],
-    "sentiment_transition": "Frustrated \u2192 Reassured",
-    "id": 11
-  },
-  {
-    "concern_summary": "Product Reactivation: Deactivated Items on Mobile App",
-    "resolution_sop": "1. Verify your login in the IndiaMART mobile app. 2. On the home screen, tap Add Product at the bottom right. 3. Tap the three dots at the top. 4. Select Deactivated Products. 5. Open each product and tap Activate. 6. Review details after activation to ensure everything appears as expected. 7. For higher visibility and fewer lapses, consider an annual plan.",
-    "key_topics": [
-      "IndiaMART mobile app",
-      "Add Product",
-      "Three dots menu",
-      "Deactivated Products",
-      "Activate",
-      "Seller App"
-    ],
-    "sentiment_transition": "Frustrated \u2192 Reassured",
-    "id": 12
-  },
-  {
-    "concern_summary": "Catalog Update: Correct Product Attributes",
-    "resolution_sop": "1. Verify your login on the IndiaMART app or Seller Panel. 2. Go to Products and search for the affected items. 3. Open a product and tap Edit. 4. Correct the Product Name and Material fields, for example change brass to metal if needed. 5. Review size, dimensions, color, and packaging fields. 6. Save the changes and repeat for all impacted products. 7. For improved lead quality, keep attributes accurate and consider a longer-duration package.",
-    "key_topics": [
-      "Edit Product",
-      "Product Name",
-      "Material",
-      "Brass",
-      "Metal",
-      "Catalog Update",
-      "Dashboard idol",
-      "Vishnu Tilak",
-      "Balaji Tilak"
-    ],
-    "sentiment_transition": "Frustrated \u2192 Reassured",
-    "id": 13
-  },
-  {
-    "concern_summary": "Catalog Enhancement: Restore Multiple Product Images",
-    "resolution_sop": "1. Verify your login on the IndiaMART app or Seller Panel. 2. Go to Products and open the product that shows fewer images. 3. Tap Edit and open the Images section. 4. Upload group photos, individual color photos, and different angle shots. 5. Set the best image as primary. 6. Save the product and repeat for other models. 7. To boost engagement and visibility, maintain rich images and explore an annual plan.",
-    "key_topics": [
-      "Product Images",
-      "Multi-angle photos",
-      "Group photo",
-      "Image Gallery",
-      "Edit Product",
-      "Catalog Quality"
-    ],
-    "sentiment_transition": "Frustrated \u2192 Reassured",
-    "id": 14
   }
 ]
