@@ -21,8 +21,18 @@ if __name__ == "__main__":
     start_time = time.time()
     
     try:
+        # Load KB
+        import pandas as pd
+        existing = []
+        try:
+             df = pd.read_csv("data/sop_registry.csv", on_bad_lines='skip', engine='python')
+             for i, r in df.iterrows():
+                 existing.append({'id': i, 'concern_summary': r.get('concern_summary', '')})
+        except: pass
+        
+        print(f"Loaded {len(existing)} existing SOPs.")
         print("Calling generate_sop...")
-        result = generate_sop(TRANSCRIPT, metadata={"Category": "Test"})
+        result = generate_sop(TRANSCRIPT, metadata={"Category": "Test"}, existing_sops=existing)
         end_time = time.time()
         
         print(f"--- Finished in {end_time - start_time:.2f} seconds ---")

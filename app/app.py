@@ -158,8 +158,7 @@ with tab1:
                                 # Check for duplicates (if prompt follows instruction)
                                 if 'duplicate_of_id' in sop_data:
                                     # Log duplicate but don't add to KB
-                                    sop_data['resolution_sop'] = f"Duplicate of ID {sop_data['duplicate_of_id']}"
-                                    update_sop_sheet(sop_data)
+                                    st.warning(f"Duplicate content detected! (Matches SOP ID {sop_data['duplicate_of_id']}) - SKIPPED")
                                     continue
 
                                 sop_data['id'] = len(knowledge_base) # Incremental ID
@@ -173,6 +172,7 @@ with tab1:
                     
                     # Save to JSON
                     st.success(f"Generated {len(knowledge_base)} SOPs! Check 'SOP Registry' below.")
+                    st.rerun()
                     
                 except Exception as e:
                     st.error(f"Processing failed: {e}")
@@ -186,7 +186,7 @@ with tab1:
         except Exception as e:
             st.error(f"Error reading CSV: {e}")
             df_sheet = pd.DataFrame()
-        st.dataframe(df_sheet, width="stretch")
+        st.dataframe(df_sheet, use_container_width=True)
 
     else:
         st.info("Knowledge Base is empty.")
@@ -271,14 +271,14 @@ with tab2:
                         st.success("Analysis Complete!")
                         for sop in sop_data_list:
                             if 'duplicate_of_id' in sop:
-                                st.warning(f"Duplicate content detected! (Matches SOP ID {sop['duplicate_of_id']})")
-                                update_sop_sheet(sop)
+                                st.warning(f"Duplicate content detected! (Matches SOP ID {sop['duplicate_of_id']}) - Not saved to Registry.")
                             else:
                                 st.json(sop)
                                 # Update Storage
                                 update_sop_sheet(sop)
 
                                 st.toast("SOP saved to Registry & Agent Brain!")
+                                st.rerun()
                     else:
                         st.error("SOP Generation failed.")
         else:
@@ -291,7 +291,7 @@ with tab2:
         except Exception as e:
             st.error(f"Error reading Registry: {e}")
             df_sheet = pd.DataFrame()
-        st.dataframe(df_sheet, width="stretch")
+        st.dataframe(df_sheet, use_container_width=True)
 
 
     else:

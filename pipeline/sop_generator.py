@@ -253,17 +253,69 @@ def update_sop_sheet(sop_data, csv_path=CSV_REGISTRY_PATH):
 
 
 
+def check_is_duplicate(transcript_text, existing_sops):
+    """
+    Fast check to see if the transcript matches an existing SOP.
+    Returns: { "duplicate_of_id": <id> } or None
+    """
+    if not existing_sops:
+        return None
+        
+    print("Checking for duplicates (Fast Mode)...")
+    
+    # Minimal context - just summaries
+    context_str = "EXISTING PROBLEMS:\n"
+    for item in existing_sops:
+        context_str += f"- ID {item.get('id')}: {item.get('concern_summary')}\n"
+
+    system_prompt = """You are a classifier. Check if the TRANSCRIPT covers a problem ALREADY LISTED in the EXISTING PROBLEMS.
+    
+    Rules:
+    1. If the exact same problem is discussed, return JSON: {"duplicate_of_id": <id>}
+    2. If it is a NEW problem, return JSON: {"duplicate_of_id": null}
+    3. Do NOT generate an SOP. Only check for duplication.
+    """
+    
+    try:
+        response = client.chat.completions.create(
+            model="openai/gpt-5", # Use fast model if available, but gpt-5 is standard here
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"{context_str}\nTRANSCRIPT:\n{transcript_text}"}
+            ],
+            response_format={ "type": "json_object" },
+            temperature=0 # Strict classification
+        )
+        
+        result = json.loads(response.choices[0].message.content)
+        if result.get("duplicate_of_id") is not None:
+             return result
+             
+        return None
+        
+    except Exception as e:
+        print(f"Duplicate check failed: {e}")
+        return None
+
+
 def generate_sop(transcript_text, metadata=None, existing_sops=None):
+    # Step 1: Fast Deduplication Check
+    if existing_sops:
+        dup_result = check_is_duplicate(transcript_text, existing_sops)
+        if dup_result:
+            print(f"Duplicate detected (ID {dup_result['duplicate_of_id']}). Skipping generation.")
+            # Return it wrapped as a list (since generate_sop expects list)
+            return [dup_result]
+
+    print("Generating New SOP (Full Generation)...")
     context_str = ""
     if metadata:
         context_str += f"\nCONTEXT:\n"
         for k, v in metadata.items():
             context_str += f"{k}: {v}\n"
     
-    if existing_sops:
-        context_str += "\nEXISTING KNOWLEDGE BASE SOPS:\n"
-        for item in existing_sops:
-            context_str += f"- ID {item.get('id', '?')}: {item.get('concern_summary', 'Unknown')}\n"
+    # We NO LONGER inject the full KB here, because we already checked for duplicates.
+    # This keeps the prompt clean for CREATION.
 
     try:
         response = client.chat.completions.create(
