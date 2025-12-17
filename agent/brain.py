@@ -16,10 +16,49 @@ class VoiceAgent:
         self.kb = self._load_kb()
         
     def _load_kb(self):
-        if not os.path.exists(KB_PATH):
+        kb_path = "data/sop_registry.csv"
+        # Adjusted for relative paths if needed, but "data/sop_registry.csv" works if running from root
+        # Let's try to be robust with project root like in app.py
+        try:
+             # Basic check if running from different dir
+             if not os.path.exists(kb_path):
+                 # Try absolute path based on this file
+                 kb_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'sop_registry.csv')
+
+             if not os.path.exists(kb_path):
+                 return []
+             
+             import pandas as pd
+             import ast
+             
+             try:
+                df = pd.read_csv(kb_path, on_bad_lines='skip', engine='python')
+             except Exception as read_err:
+                print(f"Pandas read error: {read_err}")
+                return []
+                
+             kb_data = []
+             for index, row in df.iterrows():
+                 # Parse key_topics from string "['a', 'b']" to list ['a', 'b']
+                 try:
+                     keywords = ast.literal_eval(row.get('key_topics', '[]'))
+                     if not isinstance(keywords, list):
+                         keywords = []
+                 except:
+                     keywords = []
+                 
+                 item = {
+                     'id': index, # Use row index as ID
+                     'concern_summary': row.get('concern_summary', ''),
+                     'resolution_sop': row.get('resolution_sop', ''),
+                     'key_topics': keywords,
+                     'sentiment_transition': row.get('sentiment_transition', '')
+                 }
+                 kb_data.append(item)
+             return kb_data
+        except Exception as e:
+            print(f"Error loading CSV KB: {e}")
             return []
-        with open(KB_PATH, 'r') as f:
-            return json.load(f)
 
     def find_relevant_sop(self, query):
         """
@@ -51,7 +90,7 @@ class VoiceAgent:
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": query}
                 ],
-                temperature=0
+                temperature=1
             )
             content = response.choices[0].message.content.strip()
             # Extract number

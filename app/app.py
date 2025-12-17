@@ -8,12 +8,12 @@ import pandas as pd
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from agent.brain import VoiceAgent
-from pipeline.sop_generator import run_pipeline, generate_sop, transcribe_audio, update_sop_sheet, update_knowledge_base_json
+from pipeline.sop_generator import run_pipeline, generate_sop, transcribe_audio, update_sop_sheet
 
 # Define absolute paths
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
-KB_PATH = os.path.join(DATA_DIR, 'knowledge_base.json')
+
 CSV_PATH = os.path.join(DATA_DIR, 'sop_registry.csv')
 
 # Ensure data dir exists
@@ -172,15 +172,7 @@ with tab1:
                                 update_sop_sheet(sop_data)
                     
                     # Save to JSON
-                    import json
-                    # Let's overwrite for bulk demo
-                    with open(KB_PATH, 'w') as f:
-                        json.dump(knowledge_base, f, indent=2)
-                        
-                    # Update Registry with all
-                    # (Done in loop)
-                        
-                    st.success(f"Generated {len(knowledge_base)} SOPs! Check 'Knowledge Base' below.")
+                    st.success(f"Generated {len(knowledge_base)} SOPs! Check 'SOP Registry' below.")
                     
                 except Exception as e:
                     st.error(f"Processing failed: {e}")
@@ -263,10 +255,12 @@ with tab2:
                 with st.spinner("Generating SOP..."):
                     # Load existing KB for deduplication check
                     existing_kb = []
-                    if os.path.exists(KB_PATH):
-                        with open(KB_PATH, 'r') as f:
-                            try: existing_kb = json.load(f)
-                            except: existing_kb = []
+                    if os.path.exists(CSV_PATH):
+                        try: 
+                             _df = pd.read_csv(CSV_PATH)
+                             for _idx, _row in _df.iterrows():
+                                 existing_kb.append({'id': _idx, 'concern_summary': _row.get('concern_summary', '')})
+                        except: existing_kb = []
 
                     sop_data_list = generate_sop(transcript_text, metadata=meta, existing_sops=existing_kb)
                     
@@ -283,7 +277,7 @@ with tab2:
                                 st.json(sop)
                                 # Update Storage
                                 update_sop_sheet(sop)
-                                update_knowledge_base_json(sop)
+
                                 st.toast("SOP saved to Registry & Agent Brain!")
                     else:
                         st.error("SOP Generation failed.")

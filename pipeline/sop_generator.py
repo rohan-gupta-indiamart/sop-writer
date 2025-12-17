@@ -14,8 +14,7 @@ BASE_URL = "https://imllm.intermesh.net/v1"
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 # Priority list of filenames to look for
 CSV_FILENAMES = [
-    "Copy of Call Transcriptions - IM Hackathon - Transciption.csv",
-    "Call Transcriptions - IM Hackathon - Transciption translated.csv"
+    "Copy of Call Transcriptions - IM Hackathon - Transciption.csv"
 ]
 
 # Try multiple locations
@@ -37,7 +36,6 @@ if not INPUT_CSV:
     # Fallback to the project root with first filename
     INPUT_CSV = os.path.join(PROJECT_ROOT, CSV_FILENAMES[0])
 
-OUTPUT_FILE = os.path.join(PROJECT_ROOT, "data", "knowledge_base.json")
 CSV_REGISTRY_PATH = os.path.join(PROJECT_ROOT, "data", "sop_registry.csv")
 
 client = openai.OpenAI(api_key=API_KEY, base_url=BASE_URL)
@@ -229,30 +227,7 @@ def update_sop_sheet(sop_data, csv_path=CSV_REGISTRY_PATH):
         
 
 
-def update_knowledge_base_json(sop_data, json_path=OUTPUT_FILE):
-    """
-    Appends the generated SOP to the JSON Knowledge Base.
-    """
-    try:
-        data = []
-        if os.path.exists(json_path):
-            with open(json_path, 'r') as f:
-                try:
-                    data = json.load(f)
-                except json.JSONDecodeError:
-                    data = []
-        
-        # Ensure ID
-        if 'id' not in sop_data:
-            sop_data['id'] = len(data)
-            
-        data.append(sop_data)
-        
-        with open(json_path, 'w') as f:
-            json.dump(data, f, indent=2)
-            
-    except Exception as e:
-        print(f"Error updating KB JSON: {e}")
+
 
 def generate_sop(transcript_text, metadata=None, existing_sops=None):
     context_str = ""
@@ -317,11 +292,19 @@ def run_pipeline():
         
         # Load Existing KB for Deduplication
         knowledge_base = []
-        if os.path.exists(OUTPUT_FILE):
+        if os.path.exists(CSV_REGISTRY_PATH):
              try:
-                 with open(OUTPUT_FILE, 'r') as f:
-                     knowledge_base = json.load(f)
-             except:
+                 import ast
+                 existing_df = pd.read_csv(CSV_REGISTRY_PATH)
+                 for index, r in existing_df.iterrows():
+                     # Reconstruct dict from CSV row for deduplication context
+                     knowledge_base.append({
+                         'id': index,
+                         'concern_summary': r.get('concern_summary', '')
+                         # We only really need id and concern_summary for deduplication prompts
+                     })
+             except Exception as load_err:
+                 print(f"Error loading existing CSV for deduplication: {load_err}")
                  knowledge_base = []
         
         # We need a fresh list for the new batch if we are re-processing everything?
@@ -374,18 +357,14 @@ def run_pipeline():
             
         print(f"Generated {len(knowledge_base)} SOPs.")
         
-        update_knowledge_base_json_bulk(knowledge_base)
-        print(f"Saved to {OUTPUT_FILE}")
+
         
     except Exception as e:
         print(f"CRITICAL ERROR in pipeline: {e}")
         import traceback
         traceback.print_exc()
 
-def update_knowledge_base_json_bulk(kb_data):
-    # Helper to save all at once
-    with open(OUTPUT_FILE, 'w') as f:
-        json.dump(kb_data, f, indent=2)
+
 
 if __name__ == "__main__":
     run_pipeline()
