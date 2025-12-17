@@ -4,9 +4,9 @@
 
 ```mermaid
 graph TD
-    A[Call Transcripts (CSV)] -->|Ingest| B[SOP Generator]
+    A["Call Transcripts (CSV)"] -->|Ingest| B[SOP Generator]
     B -->|LLM Extraction| C{OpenAI / LLM}
-    C -->|Structured SOP| D[Knowledge Base (JSON)]
+    C -->|Structured SOP| D["Knowledge Base (JSON)"]
     
     E[User Query] -->|Input| F[Voice Agent]
     F -->|Search| D

@@ -155,5 +155,41 @@
     ],
     "sentiment_transition": "Confused \u2192 Neutral",
     "id": 9
+  },
+  {
+    "concern_summary": "Lead Access: Unable to view buyer contact details from inquiry",
+    "resolution_sop": "1. Confirm the registered mobile number on the account. 2. Ask the seller to log in to the IndiaMART app with that number. 3. On Home, tap Messages. 4. Open the inquiry received via email and review it. 5. If contact details are hidden or a price-to-view is shown, explain that free accounts cannot contact buyers directly. 6. Offer options: complete the on-screen pay-to-view to open details, or upgrade to the paid plan for verified buyleads, direct contacts, and an account manager. 7. Once details are visible, use them to connect with the buyer. 8. For more verified opportunities, consider the paid service for higher lead access.",
+    "key_topics": [
+      "IndiaMART application",
+      "Messages tab",
+      "Email inquiry",
+      "Buyer contact details",
+      "Buyleads",
+      "Paid Service",
+      "Verified buyers",
+      "Dedicated account manager",
+      "GST registered",
+      "Aspataal Road Construction",
+      "Road work",
+      "Rs 499 pay-to-view"
+    ],
+    "sentiment_transition": "Neutral \u2192 Informed",
+    "id": 10
+  },
+  {
+    "concern_summary": "Payment assistance for lead unlock or paid service enrollment",
+    "resolution_sop": "1. Confirm the registered mobile number on the account. 2. Ask the seller to log in to the IndiaMART app with that number. 3. Go to Messages and open the inquiry that shows a price to view buyer details. 4. Tap the pay option and follow the on-screen steps to unlock the details. 5. If a payment issue appears, ask the seller to read the exact error shown on screen. 6. Offer to connect the seller to the paid service team for assisted resolution and plan guidance. 7. Share that upgrading provides verified buyleads and direct contact details for faster conversions.",
+    "key_topics": [
+      "Payment issue",
+      "Pay-to-view",
+      "Rs 499",
+      "Buyer contact details",
+      "Paid Service",
+      "Verified buyers",
+      "IndiaMART application",
+      "Messages tab"
+    ],
+    "sentiment_transition": "Neutral \u2192 Hesitant",
+    "id": 11
   }
 ]
