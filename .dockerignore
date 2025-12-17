@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+.venv_wsl/
+run_in_wsl.sh
+run_docker.bat
+.git/
+.env
+README.md
+workflow.md
