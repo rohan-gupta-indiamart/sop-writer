@@ -89,7 +89,7 @@ class VoiceAgent:
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": query}
                 ],
-                temperature=1
+                temperature=0
             )
             content = response.choices[0].message.content.strip()
             # Extract number
