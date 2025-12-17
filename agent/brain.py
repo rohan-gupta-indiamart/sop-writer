@@ -7,7 +7,6 @@ import os
 # Ideally this comes from env vars, but using the hardcoded key from writer.py for the hackathon
 API_KEY = "sk-uUANxcPXCaQOwrCHUQ-FJg"
 BASE_URL = "https://imllm.intermesh.net/v1"
-KB_PATH = "data/knowledge_base.json"
 
 client = openai.OpenAI(api_key=API_KEY, base_url=BASE_URL)
 
