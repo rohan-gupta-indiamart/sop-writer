@@ -7,7 +7,7 @@ import pandas as pd
 # Add parent dir to path to import agent/pipeline
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from agent.brain import VoiceAgent
+
 from pipeline.sop_generator import run_pipeline, generate_sop, transcribe_audio, update_sop_sheet
 
 # Define absolute paths
@@ -298,36 +298,11 @@ with tab2:
         st.info("Registry is empty.")
 
 with tab3:
-    c1, c2 = st.columns([3, 1])
-    with c1:
-        st.header("Voice Agent Simulation")
-    with c2:
-        if st.button("Clear Chat", key="clear_chat"):
-            st.session_state.messages = []
-            st.rerun()
-
-    st.write("Interact with the AI Agent powered by the generated SOPs.")
+    st.header("Voice Agent Simulation")
+    st.write("Click the button below to start a voice conversation with the AI Agent on ElevenLabs.")
     
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
+    elevenlabs_url = "https://elevenlabs.io/app/talk-to?agent_id=agent_5201kcbccjymf70br3qd8ftqy8gb&branch_id=agtbrch_4201kcbccmphf73saf4qh2421hgj"
+    
+    st.link_button("🎙️ Start Voice Chat (ElevenLabs)", elevenlabs_url, type="primary")
 
-    # Display chat messages from history on app rerun
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
-
-    if prompt := st.chat_input("Say something..."):
-        # Display user message in chat message container
-        st.chat_message("user").markdown(prompt)
-        # Add user message to chat history
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        
-        # Get Agent Response
-        agent = VoiceAgent()
-        response = agent.get_response(prompt)
-        
-        # Display assistant response in chat message container
-        with st.chat_message("assistant"):
-            st.markdown(response)
-        # Add assistant response to chat history
-        st.session_state.messages.append({"role": "assistant", "content": response})
+    st.info("Note: This will open the ElevenLabs agent interface in a new tab.")
