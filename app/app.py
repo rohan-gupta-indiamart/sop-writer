@@ -101,7 +101,7 @@ tab1, tab2, tab3 = st.tabs(["SOP Generator (Bulk)", "Real-time SOP Creator", "Vo
 
 with tab1:
     st.header("Automated SOP Generation (Bulk)")
-    st.write("Upload a CSV file containing transcripts to generate SOPs in bulk.")
+    st.write("Upload a CSV file containing transcripts in column 'Translated Transcript' to generate SOPs in bulk.")
     
     uploaded_file = st.file_uploader("Upload Transcripts CSV", type=['csv'])
     
