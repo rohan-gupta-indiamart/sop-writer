@@ -9,6 +9,13 @@ import csv
 # Configuration
 API_KEY = "sk-uUANxcPXCaQOwrCHUQ-FJg" # Using the key found in writer.py
 BASE_URL = "https://imllm.intermesh.net/v1"
+
+# COST CONFIGURATION (Based on GPT-4o Pricing)
+# $2.50 per 1M Input Tokens
+# $10.00 per 1M Output Tokens
+COST_PER_1M_INPUT_TOKENS = 2.50
+COST_PER_1M_OUTPUT_TOKENS = 10.00
+USR_TO_INR_RATE = 86.0 # Approximate conversion rate
 # Determine the project root (assuming this script is in pipeline/ or similar depth)
 # pipeline/sop_generator.py -> parent is project root
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -201,19 +208,36 @@ def update_sop_sheet(sop_data, csv_path=CSV_REGISTRY_PATH):
     """
     Appends the generated SOP to a persistent CSV registry.
     """
-    headers = ["Timestamp", "concern_summary", "resolution_sop", "key_topics", "sentiment_transition"]
+    headers = ["Timestamp", "concern_summary", "resolution_sop", "key_topics", "sentiment_transition", "Input Tokens", "Output Tokens", "Total Tokens", "Cost ($)", "Cost (INR)"]
     
     # Flatten data for CSV
     # IST Timezone (UTC+5:30)
     ist = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
     timestamp = datetime.datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S")
 
+    # Calculate Cost
+    usage = sop_data.get('usage_stats', {})
+    in_tokens = usage.get('prompt_tokens', 0)
+    out_tokens = usage.get('completion_tokens', 0)
+    total_tokens = usage.get('total_tokens', 0)
+    
+    cost = 0.0
+    if in_tokens and out_tokens:
+        cost = (in_tokens * COST_PER_1M_INPUT_TOKENS + out_tokens * COST_PER_1M_OUTPUT_TOKENS) / 1_000_000
+    
+    cost_inr = cost * USR_TO_INR_RATE
+
     row_data = {
         "Timestamp": timestamp,
         "concern_summary": sop_data.get("concern_summary", ""),
         "resolution_sop": sop_data.get("resolution_sop", ""),
         "key_topics": sop_data.get("key_topics", []),
-        "sentiment_transition": sop_data.get("sentiment_transition", "")
+        "sentiment_transition": sop_data.get("sentiment_transition", ""),
+        "Input Tokens": in_tokens,
+        "Output Tokens": out_tokens,
+        "Total Tokens": total_tokens,
+        "Cost ($)": round(cost, 6), # Precision
+        "Cost (INR)": round(cost_inr, 4)
     }
     
     file_exists = os.path.isfile(csv_path)
@@ -257,25 +281,47 @@ def generate_sop(transcript_text, metadata=None, existing_sops=None):
         )
         raw_json = json.loads(response.choices[0].message.content)
         
+        # Capture Usage Stats if available
+        usage_stats = {}
+        if hasattr(response, 'usage') and response.usage:
+            usage_stats = {
+                'prompt_tokens': response.usage.prompt_tokens,
+                'completion_tokens': response.usage.completion_tokens,
+                'total_tokens': response.usage.total_tokens
+            }
+
         # Robust handling for "wrapped" lists (e.g. {"sops": [...]})
+        final_sops = []
         if isinstance(raw_json, dict):
             # Check for common wrapper keys
+            found_list = False
             for key in ["sops", "concerns", "results", "result", "output", "data", "SOPs", "response"]:
                 if key in raw_json and isinstance(raw_json[key], list):
-                    return raw_json[key]
+                    final_sops = raw_json[key]
+                    found_list = True
+                    break
             
             # If no wrapper found but it looks like a single SOP (has concern_summary), wrap it
-            if "concern_summary" in raw_json:
-                return [raw_json]
-                
-            # Fallback: maybe the dict itself is just junk or unknown wrapper
-            # Return as list of 1 if it has content, else empty
-            return [raw_json] if raw_json else []
+            if not found_list:
+                if "concern_summary" in raw_json:
+                    final_sops = [raw_json]
+                else:    
+                     # Fallback: maybe the dict itself is just junk or unknown wrapper
+                     # Return as list of 1 if it has content, else empty
+                    final_sops = [raw_json] if raw_json else []
             
         elif isinstance(raw_json, list):
-            return raw_json
+            final_sops = raw_json
+        
+        # Inject usage stats into EACH SOP object (since they came from one generation call)
+        # This allows accurate tracking per record (though technically cost is shared)
+        # We will attach it to all, but maybe in CSV writing only the first one gets it?
+        # Actually, if we generated multiple SOPs from one transcript, the cost covers ALL of them.
+        # It is simplest to redundantly log it or divide it. Let's log it.
+        for sop in final_sops:
+            sop['usage_stats'] = usage_stats
             
-        return []
+        return final_sops
     except Exception as e:
         print(f"Error generating SOP: {e}")
         # Fallback for the demo if API fails

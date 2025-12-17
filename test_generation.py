@@ -27,5 +27,13 @@ if __name__ == "__main__":
         
         print(f"--- Finished in {end_time - start_time:.2f} seconds ---")
         print("Result:", result)
+        
+        if result:
+            from pipeline.sop_generator import update_sop_sheet
+            print("Writing to CSV...")
+            # result is a list of sops
+            for sop in result:
+                update_sop_sheet(sop)
+            print("Done.")
     except Exception as e:
         print(f"ERROR: {e}")
