@@ -1,0 +1,6 @@
+@echo off
+echo Building Docker image...
+docker build -t sop-writer .
+echo Starting container...
+docker run -p 8501:8501 sop-writer
+pause
